@@ -1,0 +1,26 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+
+    <persistence-unit name="ru.clevertec.entity">
+        <class>ru.clevertec.entity.Item</class>
+
+        <properties>
+            <!-- H2 in-memory database -->
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:mem:item_db"/>
+
+            <!-- Credentials -->
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+
+            <property name="jakarta.persistence.schema-generation.database.action" value="create-drop"/>
+
+            <!-- display SQL in console -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.highlight_sql" value="true"/>
+
+        </properties>
+    </persistence-unit>
+</persistence>
